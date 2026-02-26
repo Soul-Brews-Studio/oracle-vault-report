@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oracle Vault Report</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{surface:'#0a0a0f','surface-2':'#111118','surface-3':'#1a1a24'},fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','Fira Code','monospace']}}}}</script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+    body { font-family: 'Inter', system-ui, sans-serif; background: #000; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .oled-bg { background: radial-gradient(ellipse at top, #0d1117 0%, #000 50%); }
+    .glass { background: rgba(17, 17, 24, 0.8); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); }
+    ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: transparent; } ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+  </style>
+</head>
+<body class="oled-bg min-h-screen text-white antialiased">
+  <div class="max-w-6xl mx-auto px-4 py-6">
+
+    <header class="text-center mb-6">
+      <h1 class="text-2xl font-semibold tracking-tight mb-1">Oracle Vault Report</h1>
+      <p class="text-gray-500 text-xs font-mono">57 projects &middot; 8 orgs &middot; 31 skills &middot; February 26, 2026 at 02:53 PM</p>
+      <div class="mt-2"><a href="data.json" class="text-xs text-gray-500 hover:text-gray-300">JSON</a></div>
+    </header>
+
+    <div class="grid grid-cols-5 gap-2 mb-4"><div class="glass rounded-xl p-3">
+    <div class="text-[10px] text-gray-500 uppercase tracking-wider mb-1">.md Files</div>
+    <div class="text-xl font-bold font-mono text-blue-400">18.1K</div>
+  </div>
+<div class="glass rounded-xl p-3">
+    <div class="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Projects</div>
+    <div class="text-xl font-bold font-mono text-emerald-400">57</div>
+  </div>
+<div class="glass rounded-xl p-3">
+    <div class="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Orgs</div>
+    <div class="text-xl font-bold font-mono text-violet-400">8</div>
+  </div>
+<div class="glass rounded-xl p-3">
+    <div class="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Skills</div>
+    <div class="text-xl font-bold font-mono text-amber-400">31</div>
+  </div>
+<div class="glass rounded-xl p-3">
+    <div class="text-[10px] text-gray-500 uppercase tracking-wider mb-1">Vault Size</div>
+    <div class="text-xl font-bold font-mono text-rose-400">148.3 MB</div>
+  </div></div>
+
+    <div class="grid lg:grid-cols-2 gap-3 mb-4">
+      <div class="glass rounded-xl p-4">
+        <h2 class="text-sm font-semibold mb-3">Connection Breakdown <span class="text-[10px] text-gray-600 font-normal">(78 with ψ/)</span></h2>
+        <div class="space-y-3"><div>
+    <div class="flex justify-between items-center mb-1">
+      <span class="text-xs text-gray-400">Symlinked → vault</span>
+      <span class="font-mono text-xs text-emerald-400">58 <span class="text-gray-600">(74.4%)</span></span>
+    </div>
+    <div class="h-1.5 bg-surface-3 rounded-full overflow-hidden">
+      <div class="h-full bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-full" style="width: 74.4%"></div>
+    </div>
+  </div>
+<div>
+    <div class="flex justify-between items-center mb-1">
+      <span class="text-xs text-gray-400">Real ψ/ (repos)</span>
+      <span class="font-mono text-xs text-violet-400">9 <span class="text-gray-600">(11.5%)</span></span>
+    </div>
+    <div class="h-1.5 bg-surface-3 rounded-full overflow-hidden">
+      <div class="h-full bg-gradient-to-r from-violet-600 to-violet-400 rounded-full" style="width: 11.5%"></div>
+    </div>
+  </div>
+<div>
+    <div class="flex justify-between items-center mb-1">
+      <span class="text-xs text-gray-400">Real ψ/ (worktrees)</span>
+      <span class="font-mono text-xs text-amber-400">11 <span class="text-gray-600">(14.1%)</span></span>
+    </div>
+    <div class="h-1.5 bg-surface-3 rounded-full overflow-hidden">
+      <div class="h-full bg-gradient-to-r from-amber-600 to-amber-400 rounded-full" style="width: 14.1%"></div>
+    </div>
+  </div></div>
+        <div class="mt-3 p-2.5 bg-surface-3/50 rounded-lg border border-white/5 flex items-center justify-between">
+          <div><div class="text-[10px] text-gray-500 uppercase">Needs rsync</div><div class="text-lg font-bold font-mono text-white">20</div></div>
+          <div class="text-[10px] text-gray-600">9 repos + 11 wt</div>
+        </div>
+      </div>
+      <div class="glass rounded-xl p-4">
+        <h2 class="text-sm font-semibold mb-3">Org Distribution</h2>
+        <div class="space-y-2.5"><div>
+    <div class="flex justify-between items-center mb-1">
+      <div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-violet-500"></span><span class="text-xs text-gray-300">laris-co</span></div>
+      <span class="font-mono text-xs text-violet-400">13.3K <span class="text-gray-600">(29)</span></span>
+    </div>
+    <div class="h-1 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-violet-500 rounded-full" style="width: 73.3%"></div></div>
+  </div>
+<div>
+    <div class="flex justify-between items-center mb-1">
+      <div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span><span class="text-xs text-gray-300">soul-brews-studio</span></div>
+      <span class="font-mono text-xs text-emerald-400">4.3K <span class="text-gray-600">(15)</span></span>
+    </div>
+    <div class="h-1 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-emerald-500 rounded-full" style="width: 23.8%"></div></div>
+  </div>
+<div>
+    <div class="flex justify-between items-center mb-1">
+      <div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span><span class="text-xs text-gray-300">arthur-oracle-ai</span></div>
+      <span class="font-mono text-xs text-blue-400">231 <span class="text-gray-600">(1)</span></span>
+    </div>
+    <div class="h-1 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-blue-500 rounded-full" style="width: 1.3%"></div></div>
+  </div>
+<div>
+    <div class="flex justify-between items-center mb-1">
+      <div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span><span class="text-xs text-gray-300">oracle-net-the-resonance-network</span></div>
+      <span class="font-mono text-xs text-rose-400">149 <span class="text-gray-600">(2)</span></span>
+    </div>
+    <div class="h-1 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-rose-500 rounded-full" style="width: 0.8%"></div></div>
+  </div>
+<div>
+    <div class="flex justify-between items-center mb-1">
+      <div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span><span class="text-xs text-gray-300">nazt</span></div>
+      <span class="font-mono text-xs text-amber-400">93 <span class="text-gray-600">(5)</span></span>
+    </div>
+    <div class="h-1 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-amber-500 rounded-full" style="width: 0.5%"></div></div>
+  </div>
+<div>
+    <div class="flex justify-between items-center mb-1">
+      <div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span><span class="text-xs text-gray-300">maeon-lab</span></div>
+      <span class="font-mono text-xs text-indigo-400">23 <span class="text-gray-600">(2)</span></span>
+    </div>
+    <div class="h-1 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-indigo-500 rounded-full" style="width: 0.1%"></div></div>
+  </div>
+<div>
+    <div class="flex justify-between items-center mb-1">
+      <div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span><span class="text-xs text-gray-300">prakit-advertising</span></div>
+      <span class="font-mono text-xs text-teal-400">19 <span class="text-gray-600">(2)</span></span>
+    </div>
+    <div class="h-1 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-teal-500 rounded-full" style="width: 0.1%"></div></div>
+  </div>
+<div>
+    <div class="flex justify-between items-center mb-1">
+      <div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span><span class="text-xs text-gray-300">dryoungdo-wellness-clinic</span></div>
+      <span class="font-mono text-xs text-orange-400">10 <span class="text-gray-600">(1)</span></span>
+    </div>
+    <div class="h-1 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-orange-500 rounded-full" style="width: 0.1%"></div></div>
+  </div></div>
+      </div>
+    </div>
+
+    <div class="glass rounded-xl p-4 mb-4">
+      <h2 class="text-sm font-semibold mb-3">Top 20 Projects <span class="text-[10px] text-gray-600 font-normal">(.md files)</span></h2>
+      <div class="space-y-1"><div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">1</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">nat-s-agents</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-violet-600 to-violet-400 rounded-full" style="width: 100.0%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">4.2K</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">2</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">oracle-starter</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-violet-600 to-violet-400 rounded-full" style="width: 45.4%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">1.9K</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">3</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">nats-brain-oracle</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-violet-600 to-violet-400 rounded-full" style="width: 44.0%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">1.9K</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">4</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">nats-brain-oracle-old</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-violet-600 to-violet-400 rounded-full" style="width: 44.0%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">1.9K</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">5</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">open-nat-brain-oracle-brain-nat-open</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-full" style="width: 42.4%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">1.8K</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">6</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">opensource-nat-brain-oracle</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-full" style="width: 42.4%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">1.8K</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">7</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">private-nats-brain-oracle-soul</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-violet-600 to-violet-400 rounded-full" style="width: 37.7%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">1.6K</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">8</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">dustboy-phd-oracle</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-violet-600 to-violet-400 rounded-full" style="width: 13.8%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">580</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">9</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">homelab</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-violet-600 to-violet-400 rounded-full" style="width: 7.5%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">318</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">10</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">arthur-oracle</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" style="width: 5.5%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">231</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">11</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">floodboy-oracle</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-violet-600 to-violet-400 rounded-full" style="width: 4.7%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">198</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">12</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">oracle-v2</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-full" style="width: 4.0%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">167</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">13</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">the-resonance-oracle</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-rose-600 to-rose-400 rounded-full" style="width: 3.5%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">147</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">14</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">volt-oracle</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-violet-600 to-violet-400 rounded-full" style="width: 3.3%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">138</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">15</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">shrimp-oracle</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-full" style="width: 3.3%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">138</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">16</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">phukhao-oracle</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-full" style="width: 3.1%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">132</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">17</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">fireman-oracle</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-violet-600 to-violet-400 rounded-full" style="width: 2.7%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">115</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">18</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">dustboy-chain-oracle</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-violet-600 to-violet-400 rounded-full" style="width: 2.5%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">106</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">19</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">oracle-skills-cli</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-full" style="width: 2.5%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">105</span>
+    </div>
+<div class="flex items-center gap-2">
+      <span class="w-4 text-[10px] text-gray-600 text-right font-mono">20</span>
+      <span class="w-[180px] text-[11px] text-gray-400 truncate">shrimp-oracle-legacy</span>
+      <div class="flex-1 h-3 bg-surface-3 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-full" style="width: 2.5%"></div></div>
+      <span class="w-12 text-[10px] font-mono text-gray-500 text-right">104</span>
+    </div></div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-3 mb-4">
+      <div class="glass rounded-xl p-4">
+        <h2 class="text-sm font-semibold mb-3">Rsync Eligible <span class="text-[10px] text-gray-600 font-normal">(20)</span></h2>
+        <table class="w-full text-left">
+          <thead class="text-[10px] text-gray-500 uppercase tracking-wider border-b border-white/10">
+            <tr><th class="py-1 px-2">Repo</th><th class="py-1 px-2">Type</th><th class="py-1 px-2 text-right">.md</th><th class="py-1 px-2 text-right">Size</th></tr>
+          </thead>
+          <tbody><tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">github.com/laris-co/Nat-s-Agents.wt-8</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-amber-500/20 text-amber-400 rounded">wt</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">2371</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">27.3 MB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">agent-6/Nat-s-Agents</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-violet-500/20 text-violet-400 rounded">repo</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">2218</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">90.3 MB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">agent-1/Nat-s-Agents</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-violet-500/20 text-violet-400 rounded">repo</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">2058</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">53.8 MB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">agent-2/Nat-s-Agents</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-violet-500/20 text-violet-400 rounded">repo</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">2058</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">53.8 MB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">agent-3/Nat-s-Agents</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-violet-500/20 text-violet-400 rounded">repo</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">2058</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">53.8 MB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">agent-4/Nat-s-Agents</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-violet-500/20 text-violet-400 rounded">repo</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">2058</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">53.8 MB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">agent-5/Nat-s-Agents</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-violet-500/20 text-violet-400 rounded">repo</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">2058</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">53.8 MB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">github.com/Soul-Brews-Studio/shrimp-oracle.wt-1</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-amber-500/20 text-amber-400 rounded">wt</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">147</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">872.4 KB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">github.com/laris-co/DustBoy-Phd-Oracle.wt-1</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-amber-500/20 text-amber-400 rounded">wt</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">133</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">2.2 GB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">github.com/laris-co/arthur-oracle.wt/1</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-amber-500/20 text-amber-400 rounded">wt</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">98</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">630.8 KB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">github.com/laris-co/arthur-oracle.wt/2</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-amber-500/20 text-amber-400 rounded">wt</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">98</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">630.8 KB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">github.com/Soul-Brews-Studio/shrimp-oracle.wt-2</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-amber-500/20 text-amber-400 rounded">wt</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">92</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">573.4 KB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">github.com/laris-co/hermes-oracle</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-violet-500/20 text-violet-400 rounded">repo</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">47</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">22.2 MB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">github.com/laris-co/fireman-oracle.wt-2</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-amber-500/20 text-amber-400 rounded">wt</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">40</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">1.2 MB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">github.com/laris-co/fireman-oracle.wt-1</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-amber-500/20 text-amber-400 rounded">wt</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">30</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">766.0 KB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">github.com/laris-co/fireman-oracle.wt-3</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-amber-500/20 text-amber-400 rounded">wt</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">30</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">766.0 KB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">github.com/nazt/hello-oracle.wt-1</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-amber-500/20 text-amber-400 rounded">wt</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">19</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">442.4 KB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">github.com/nazt/Theta-Oracle.wt-1</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-amber-500/20 text-amber-400 rounded">wt</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">9</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">155.6 KB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">github.com/laris-co/odin-oracle</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-violet-500/20 text-violet-400 rounded">repo</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">8</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">53.2 KB</td>
+    </tr>
+<tr class="border-b border-white/5 hover:bg-white/[0.02]">
+      <td class="py-1 px-2 text-xs text-gray-300 font-mono truncate max-w-[280px]">github.com/laris-co/mission-04-hooks-challenge</td>
+      <td class="py-1 px-2"><span class="px-1 py-0.5 text-[9px] bg-violet-500/20 text-violet-400 rounded">repo</span></td>
+      <td class="py-1 px-2 text-xs text-gray-400 font-mono text-right">0</td>
+      <td class="py-1 px-2 text-xs text-gray-500 font-mono text-right">0 B</td>
+    </tr></tbody>
+        </table>
+      </div>
+      <div class="glass rounded-xl p-4">
+        <h2 class="text-sm font-semibold mb-3">Oracle Skills <span class="text-[10px] text-gray-600 font-normal">(31 &middot; v1.6.1)</span></h2>
+        <div class="divide-y divide-white/5"><div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/awaken</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Guided Oracle birth and awakening ritual (~15 min). Use when creating a new Oracle in a fresh repo. Orchestrates /learn and /trace for philosophy discovery.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/birth</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Prepare birth props for a new Oracle repo. Creates issue #1 with context (name, theme, purpose) and MCP thread. Use when mother-oracle says &quot;birth&quot;, &quot;prepare oracle&quot;, or wants to drop props for a new child.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/deep-research</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Deep Research via Gemini. Use when user says &quot;deep research&quot;, &quot;research this topic&quot;, or needs comprehensive analysis with sources.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/dev-browser</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Browser automation with persistent page state. Use when users ask to navigate websites, fill forms, take screenshots, extract web data, test web apps, or automate browser workflows. Trigger phrases include &quot;go to [url]&quot;, &quot;click on&quot;, &quot;fill out the form&quot;, &quot;take a screenshot&quot;, &quot;scrape&quot;, &quot;automate&quot;, &quot;test the website&quot;, &quot;log into&quot;, or any browser interaction request.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/dig</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Mine Claude Code sessions — timeline, gaps, repo attribution. Use when user says &quot;dig&quot;, &quot;sessions&quot;, &quot;past sessions&quot;, &quot;timeline&quot;, &quot;what did I work on&quot;.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/feel</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Log emotions with optional structure. Use when user says &quot;feel&quot;, &quot;feeling&quot;, &quot;mood&quot;, &quot;tired&quot;, &quot;sleepy&quot;, &quot;frustrated&quot;, &quot;happy&quot;, &quot;excited&quot;.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/forward</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Create handoff + enter plan mode for next session. Use when user says &quot;forward&quot;, &quot;handoff&quot;, &quot;wrap up&quot;, or before ending session.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/fyi</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Log information for future reference. Use when user says &quot;fyi&quot;, &quot;remember this&quot;, &quot;note that&quot;, &quot;for your info&quot;.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/gemini</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Control Gemini via MQTT WebSocket. Use when user says &quot;gemini&quot;, needs to send messages to Gemini, or control the Gemini browser tab.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/learn</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Explore a codebase with parallel Haiku agents. Modes - --fast (1 agent), default (3), --deep (5). Use when user says &quot;learn [repo]&quot;, &quot;explore codebase&quot;, &quot;study this repo&quot;.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/line-chat</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Parse LINE chat export .txt files. Index by month, search, filter by person/chat, extract topics. Works with Thai text.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/merged</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Post-Merge Cleanup. Switch to main, pull latest, delete merged branch. Use after PR is merged.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/oracle</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Manage Oracle skills and profiles. Use when user says &quot;oracle&quot;, &quot;profile&quot;, &quot;install skill&quot;, &quot;remove skill&quot;, &quot;switch profile&quot;.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/oracle-family-scan</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Manage Oracle family - scan, track, welcome new Oracles. Use when user says &quot;family scan&quot;, &quot;oracle registry&quot;, &quot;welcome new oracles&quot;, or needs to check Oracle population.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/oracle-soul-sync-update</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Sync Oracle instruments with the family. Check and update skills to latest version. Use when user says &quot;soul-sync&quot;, &quot;sync&quot;, &quot;calibrate&quot;, &quot;update&quot;, or before /awaken.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/oraclenet</span>
+      <span class="text-[11px] text-gray-500 leading-tight">OracleNet — claim identity, post, comment, feed. Use when &quot;oraclenet&quot;, &quot;claim oracle&quot;, &quot;oracle post&quot;, &quot;oracle comment&quot;, &quot;oracle feed&quot;.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/philosophy</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Display Oracle philosophy principles and guidance. Use when user asks about principles, &quot;nothing deleted&quot;, Oracle philosophy, or needs alignment check.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/physical</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Physical location awareness from FindMy. Use when user says &quot;physical&quot;, &quot;where am I&quot;, &quot;location&quot;, &quot;where is nat&quot;, or needs to check current physical location.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/project</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Clone and track external repos. Use when user shares GitHub URL to study or develop, or says &quot;search repos&quot;, &quot;find repo&quot;, &quot;where is [project]&quot;. Actions - learn (clone for study), incubate (clone for development), search/find (search repos), list (show tracked).</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/recap</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Session orientation and awareness. Use when starting a session, after /jump, lost your place, switching context, or when user asks &quot;now&quot;, &quot;where are we&quot;, &quot;what are we doing&quot;, &quot;status&quot;.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/retrospective</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Create session retrospective with AI diary and lessons learned. Alias for /rrr. Use when user says &quot;retrospective&quot;, &quot;retro&quot;, &quot;session summary&quot;, or at end of work session.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/rrr</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Create session retrospective with AI diary and lessons learned. Use when user says &quot;rrr&quot;, &quot;retrospective&quot;, &quot;wrap up session&quot;, &quot;session summary&quot;, or at end of work session.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/schedule</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Query schedule.md using DuckDB markdown extension. Use when user says &quot;schedule&quot;, &quot;upcoming events&quot;, &quot;what's on today&quot;, &quot;calendar&quot;.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/speak</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Text-to-speech using edge-tts or macOS say. Use when user says &quot;speak&quot;, &quot;say&quot;, &quot;read aloud&quot;, or wants text spoken.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/standup</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Daily standup check - pending tasks, appointments, recent progress. Use when user says &quot;standup&quot;, &quot;morning check&quot;, &quot;what's pending&quot;.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/talk-to</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Talk to an agent via Oracle threads. Use when user says &quot;talk to&quot;, &quot;message&quot;, &quot;chat with&quot;, or wants to communicate with another agent.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/trace</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Find projects across git history, repos, docs, and Oracle. Use when user asks &quot;trace&quot;, &quot;find project&quot;, &quot;where is [project]&quot;, &quot;search history&quot;. Supports --oracle (fast), --smart (default), --deep (5 subagents). For session mining use /dig.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/watch</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Learn from YouTube videos via Gemini transcription. Use when user says &quot;watch&quot;, &quot;transcribe youtube&quot;, &quot;learn from video&quot;, or shares a YouTube URL to study.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/where-we-are</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Session awareness - alias for /recap --now. Use when user asks &quot;now&quot;, &quot;where are we&quot;, &quot;what are we doing&quot;, &quot;status&quot;.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/who-are-you</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Know ourselves - show identity, model info, session stats, and Oracle philosophy. Use when user asks &quot;who are you&quot;, &quot;who&quot;, &quot;who we are&quot;, or wants to check current AI identity.</span>
+    </div>
+<div class="flex items-start gap-2 py-1">
+      <span class="text-xs text-violet-400 font-mono w-[140px] shrink-0">/worktree</span>
+      <span class="text-[11px] text-gray-500 leading-tight">Git worktree for parallel work. Use when user says &quot;worktree&quot;, &quot;parallel work&quot;, &quot;new agent&quot;, &quot;start parallel&quot;.</span>
+    </div></div>
+      </div>
+    </div>
+
+    <footer class="text-center text-gray-600 text-[10px] py-3 border-t border-white/5">
+      <a href="https://github.com/Soul-Brews-Studio/oracle-vault-report" class="text-gray-500 hover:text-gray-300">Soul-Brews-Studio/oracle-vault-report</a> &middot; <span class="font-mono">2026-02-26T07:53:10.520Z</span>
+    </footer>
+  </div>
+</body>
+</html>

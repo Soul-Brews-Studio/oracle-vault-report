@@ -1,0 +1,376 @@
+{
+  "generated": "2026-02-26T07:53:10.520Z",
+  "totalRepos": 332,
+  "totalWithPsi": 78,
+  "totalSymlinked": 58,
+  "totalReal": 9,
+  "totalWorktrees": 11,
+  "totalNeedSync": 20,
+  "totalMdInVault": 18142,
+  "totalVaultProjects": 57,
+  "totalVaultOrgs": 8,
+  "vaultSize": 148324352,
+  "skills": [
+    "awaken",
+    "birth",
+    "deep-research",
+    "dev-browser",
+    "dig",
+    "feel",
+    "forward",
+    "fyi",
+    "gemini",
+    "learn",
+    "line-chat",
+    "merged",
+    "oracle",
+    "oracle-family-scan",
+    "oracle-soul-sync-update",
+    "oraclenet",
+    "philosophy",
+    "physical",
+    "project",
+    "recap",
+    "retrospective",
+    "rrr",
+    "schedule",
+    "speak",
+    "standup",
+    "talk-to",
+    "trace",
+    "watch",
+    "where-we-are",
+    "who-are-you",
+    "worktree"
+  ],
+  "skillsVersion": "v1.6.1",
+  "vaultProjects": [
+    {
+      "org": "laris-co",
+      "project": "nat-s-agents",
+      "mdCount": 4216
+    },
+    {
+      "org": "laris-co",
+      "project": "oracle-starter",
+      "mdCount": 1916
+    },
+    {
+      "org": "laris-co",
+      "project": "nats-brain-oracle",
+      "mdCount": 1855
+    },
+    {
+      "org": "laris-co",
+      "project": "nats-brain-oracle-old",
+      "mdCount": 1855
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "open-nat-brain-oracle-brain-nat-open",
+      "mdCount": 1789
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "opensource-nat-brain-oracle",
+      "mdCount": 1789
+    },
+    {
+      "org": "laris-co",
+      "project": "private-nats-brain-oracle-soul",
+      "mdCount": 1588
+    },
+    {
+      "org": "laris-co",
+      "project": "dustboy-phd-oracle",
+      "mdCount": 580
+    },
+    {
+      "org": "laris-co",
+      "project": "homelab",
+      "mdCount": 318
+    },
+    {
+      "org": "arthur-oracle-ai",
+      "project": "arthur-oracle",
+      "mdCount": 231
+    },
+    {
+      "org": "laris-co",
+      "project": "floodboy-oracle",
+      "mdCount": 198
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "oracle-v2",
+      "mdCount": 167
+    },
+    {
+      "org": "oracle-net-the-resonance-network",
+      "project": "the-resonance-oracle",
+      "mdCount": 147
+    },
+    {
+      "org": "laris-co",
+      "project": "volt-oracle",
+      "mdCount": 138
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "shrimp-oracle",
+      "mdCount": 138
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "phukhao-oracle",
+      "mdCount": 132
+    },
+    {
+      "org": "laris-co",
+      "project": "fireman-oracle",
+      "mdCount": 115
+    },
+    {
+      "org": "laris-co",
+      "project": "dustboy-chain-oracle",
+      "mdCount": 106
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "oracle-skills-cli",
+      "mdCount": 105
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "shrimp-oracle-legacy",
+      "mdCount": 104
+    },
+    {
+      "org": "laris-co",
+      "project": "thong-pradit-brewing-oracle",
+      "mdCount": 69
+    },
+    {
+      "org": "laris-co",
+      "project": "hermes-oracle",
+      "mdCount": 61
+    },
+    {
+      "org": "nazt",
+      "project": "hello-oracle",
+      "mdCount": 59
+    },
+    {
+      "org": "laris-co",
+      "project": "clawdacle",
+      "mdCount": 56
+    },
+    {
+      "org": "laris-co",
+      "project": "brews-boy-oracle",
+      "mdCount": 36
+    },
+    {
+      "org": "laris-co",
+      "project": "maeon-craft-oracle",
+      "mdCount": 36
+    },
+    {
+      "org": "laris-co",
+      "project": "mother-oracle",
+      "mdCount": 36
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "landing-oracle",
+      "mdCount": 34
+    },
+    {
+      "org": "laris-co",
+      "project": "oracle-v2.old",
+      "mdCount": 29
+    },
+    {
+      "org": "laris-co",
+      "project": "the-headline-mono",
+      "mdCount": 24
+    },
+    {
+      "org": "maeon-lab",
+      "project": "maeon-craft-oracle",
+      "mdCount": 21
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "sea-oracle",
+      "mdCount": 19
+    },
+    {
+      "org": "laris-co",
+      "project": "nat-data-personal",
+      "mdCount": 16
+    },
+    {
+      "org": "prakit-advertising",
+      "project": "ai-report-automation",
+      "mdCount": 16
+    },
+    {
+      "org": "laris-co",
+      "project": "pulse",
+      "mdCount": 15
+    },
+    {
+      "org": "nazt",
+      "project": "jarvis",
+      "mdCount": 14
+    },
+    {
+      "org": "nazt",
+      "project": "theta-oracle",
+      "mdCount": 13
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "backstage",
+      "mdCount": 13
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "claude-code-workshops",
+      "mdCount": 13
+    },
+    {
+      "org": "laris-co",
+      "project": "odin-oracle",
+      "mdCount": 11
+    },
+    {
+      "org": "dryoungdo-wellness-clinic",
+      "project": "mycelium-oracle",
+      "mdCount": 10
+    },
+    {
+      "org": "laris-co",
+      "project": "nat-garmin-data",
+      "mdCount": 10
+    },
+    {
+      "org": "nazt",
+      "project": "claude-usage-report",
+      "mdCount": 6
+    },
+    {
+      "org": "laris-co",
+      "project": "claude-browser-proxy",
+      "mdCount": 5
+    },
+    {
+      "org": "laris-co",
+      "project": "voice-tray-v2",
+      "mdCount": 4
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "cf-worker-mailhook-discord",
+      "mdCount": 4
+    },
+    {
+      "org": "laris-co",
+      "project": "esphome-fw",
+      "mdCount": 3
+    },
+    {
+      "org": "laris-co",
+      "project": "fitbit-analysis",
+      "mdCount": 3
+    },
+    {
+      "org": "laris-co",
+      "project": "headline-rag",
+      "mdCount": 3
+    },
+    {
+      "org": "laris-co",
+      "project": "hello3",
+      "mdCount": 3
+    },
+    {
+      "org": "prakit-advertising",
+      "project": "nat-fb-ads-analytics-dashboard",
+      "mdCount": 3
+    },
+    {
+      "org": "maeon-lab",
+      "project": "maeon-craft-landing",
+      "mdCount": 2
+    },
+    {
+      "org": "oracle-net-the-resonance-network",
+      "project": "oracle-universe-api",
+      "mdCount": 2
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "maeon-craft-landing",
+      "mdCount": 2
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "oracle-framework-advanced",
+      "mdCount": 2
+    },
+    {
+      "org": "nazt",
+      "project": "kimi-lab-v2",
+      "mdCount": 1
+    },
+    {
+      "org": "soul-brews-studio",
+      "project": "oracle-voice-tray",
+      "mdCount": 1
+    }
+  ],
+  "orgList": [
+    {
+      "org": "laris-co",
+      "projects": 29,
+      "mdCount": 13305
+    },
+    {
+      "org": "soul-brews-studio",
+      "projects": 15,
+      "mdCount": 4312
+    },
+    {
+      "org": "arthur-oracle-ai",
+      "projects": 1,
+      "mdCount": 231
+    },
+    {
+      "org": "oracle-net-the-resonance-network",
+      "projects": 2,
+      "mdCount": 149
+    },
+    {
+      "org": "nazt",
+      "projects": 5,
+      "mdCount": 93
+    },
+    {
+      "org": "maeon-lab",
+      "projects": 2,
+      "mdCount": 23
+    },
+    {
+      "org": "prakit-advertising",
+      "projects": 2,
+      "mdCount": 19
+    },
+    {
+      "org": "dryoungdo-wellness-clinic",
+      "projects": 1,
+      "mdCount": 10
+    }
+  ]
+}
